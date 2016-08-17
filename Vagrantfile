@@ -13,13 +13,13 @@ Vagrant.configure(2) do |config|
 
 config.vm.provision "shell", inline: <<-SHELL
     ## Install swift dependencies
-    sudo apt-get --assume-yes install clang
+    sudo apt-get --assume-yes install clang libicu-dev
     ## Download swift binary release
-    curl -O https://swift.org/builds/swift-2.2.1-release/ubuntu1404/swift-2.2.1-RELEASE/swift-2.2.1-RELEASE-ubuntu14.04.tar.gz
+    curl -O https://swift.org/builds/swift-3.0-preview-6/ubuntu1404/swift-3.0-PREVIEW-6/swift-3.0-PREVIEW-6-ubuntu14.04.tar.gz
     ## Tar binary
-    tar zxf swift-2.2.1-RELEASE-ubuntu14.04.tar.gz
+    tar zxf swift-3.0-PREVIEW-6-ubuntu14.04.tar.gz
     ## Set up path for swift
-    echo "export PATH=/home/vagrant/swift-2.2.1-RELEASE-ubuntu14.04/usr/bin:\"${PATH}\"" >> .profile
+    echo "export PATH=/home/vagrant/swift-3.0-PREVIEW-6-ubuntu14.04/usr/bin:\"${PATH}\"" >> .profile
     echo "Swift has successfully installed on Linux"
     ## Update packages
     sudo apt-get update -y
